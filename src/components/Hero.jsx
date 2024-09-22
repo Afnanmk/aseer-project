@@ -29,9 +29,9 @@ const Hero = () => {
                 </ul>
             </div>
             <div className='flex gap-5 ml-auto lg:ml-0'>
-            <a href="#home" className='border border-2 rounded-full p-2'><IoIosMoon size={30}/></a>
-            <a href="#home" className='border border-2 rounded-full p-2'><CiLocationOn size={30}/></a>
-            <a href="#home" className='border border-2 rounded-full p-2'><CiGlobe size={30}/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><IoIosMoon className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><CiLocationOn className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><CiGlobe className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
             </div>
 
              {/* hamburger menu */}
