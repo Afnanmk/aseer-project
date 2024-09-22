@@ -96,3 +96,10 @@ code {
     width: 90%;
   }
 }
+
+
+@media (max-width: 380px) {
+  .discover_grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}

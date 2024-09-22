@@ -13,7 +13,7 @@ const Hero = () => {
   }
 
   return (
-    <section className=' text-white bg-hero-pattern w-full min-h-[80vh] lg:min-h-[120vh] bg-no-repeat bg-cover bg-center pb-[5rem] relative'>
+    <section className=' text-white bg-hero-pattern w-full min-h-[80vh] lg:min-h-[120vh] bg-no-repeat bg-cover bg-center pb-[5rem] relative overflow-hidden'>
         <header className='bg-black w-full lg:border-b-[2px] lg:border-[#5b635c] bg-opacity-[0.2]'>
         <div className='container-custom'>
         <nav className='flex lg:justify-between items-center py-6'>

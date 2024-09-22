@@ -15,7 +15,7 @@ const Travel = () => {
 
                     <img src="Assets/images/travel/visa.png" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
-                        <p className="text-2xl font-[700]  text-zinc-800 dark:text-white ara_hamah">
+                        <p className="text-2xl font-[700]  text-zinc-800">
                             Entry Visa Requirements
                         </p>
                     </div>
@@ -41,7 +41,7 @@ const Travel = () => {
 
                     <img src="Assets/images/travel/plane-svgrepo-com.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
-                        <p className="text-2xl font-[700] text-zinc-800 dark:text-white ara_hamah">
+                        <p className="text-2xl font-[700] text-zinc-800">
                             Travel to Aseer
                         </p>
                     </div>
@@ -67,7 +67,7 @@ const Travel = () => {
 
                     <img src="Assets/images/travel/hotel-building-svgrepo-com.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
-                        <p className="text-2xl font-[700]  text-zinc-800 dark:text-white ara_hamah">
+                        <p className="text-2xl font-[700]  text-zinc-800">
                             Plan Your Stay
                         </p>
                     </div>
@@ -93,7 +93,7 @@ const Travel = () => {
 
                     <img src="Assets/images/travel/binoculars-icon-1707979000.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
-                        <p className="text-2xl font-[700]  text-zinc-800 dark:text-white ara_hamah">
+                        <p className="text-2xl font-[700]  text-zinc-800">
                             Choose Your Destination
                         </p>
                     </div>

@@ -24,7 +24,7 @@ const Destinations = () => {
 
   return (
     <div
-      className="slider pb-[5rem] pt-[10rem]"
+      className="slider pb-[5rem] pt-[10rem] overflow-hidden"
       style={{ backgroundImage: `url(${images[currentIndex].url})` }}
     >
 
@@ -38,7 +38,7 @@ const Destinations = () => {
           <h4 className='text-2xl lg:text-4xl mb-[3rem]'>{images[currentIndex].h4}</h4>
           <p className='text-xl leading-relaxed lg:w-[50%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus hic obcaecati enim, cum ut accusantium quaerat at quibusdam voluptas! Modi voluptatem explicabo exercitationem ratione at ab tempore, sapiente delectus error.</p>
           </div>
-          <div className="thumbnails gap-[10px] md:gap-[20px]">
+          <div className="flex-wrap sm:flex-nowrap thumbnails gap-[10px] md:gap-[20px]">
           {images.map((image, index) => (
             <img
               key={image.id}

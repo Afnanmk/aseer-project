@@ -2,7 +2,7 @@ import React from 'react'
 
 const Attractions = () => {
   return (
-    <section className='mb-[6rem] mt-[4rem]'>
+    <section className='mb-[6rem] mt-[4rem] overflow-hidden'>
        <div className='container-custom'>
           <div className='flex flex-col md:flex-row justify-between md:items-center'>
             <div className=''>
