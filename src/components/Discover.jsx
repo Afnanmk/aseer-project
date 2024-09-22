@@ -10,37 +10,37 @@ const Discover = () => {
         In a captivating symphony of beauty, mountain peaks merge with the pristine shores, as golden sands wrap around lush plateaus. Nature conducts a graceful dance, where the warmth of the plains twirls with the rain, and mist drifts elegantly through the landscape's splendor.
         </p>
           <div className='grid grid-cols-2 sm:grid-cols-3 gap-6 text-xl'>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image1.jpg" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>
             <p className='font-[700] text-center mt-3'>Events</p>
             </a>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image-2.webp" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>
             <p className='font-[700] text-center mt-3'>Experiences</p>
             </a>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image-3.webp" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>
             <p className='font-[700] text-center mt-3'>Destinations</p>
             </a>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image-4.webp" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>
             <p className='font-[700] text-center mt-3'>Accommodations</p>
             </a>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image-5.webp" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>
             <p className='font-[700] text-center mt-3'>Cuisines</p>
             </a>
-            <a href="">
+            <a href="#home">
             <div className='overflow-hidden w-full rounded-xl'>
             <img src="Assets/images/discover/image-6.webp" alt="" className='object-cover h-[120px] lg:h-[291px] w-full duration-500 hover:scale-110'/>
             </div>

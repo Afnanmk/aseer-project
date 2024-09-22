@@ -18,20 +18,20 @@ const Hero = () => {
         <div className='container-custom'>
         <nav className='flex lg:justify-between items-center py-6'>
             <div>
-                <a href="#"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[140px]'/></a>
+                <a href="#home"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[140px]' id='home'/></a>
             </div>
             <div className='hidden lg:static lg:block text-lg font-[600] px-6'>
                 <ul className='flex gap-6 items-center'>
-                    <li className=' hover:text-[var(--primary)]'><a href="#">Discover Aseer</a></li>
-                    <li className='hover:text-[var(--primary)]'><a href="#">Plan your trip</a></li>
-                    <li className='hover:text-[var(--primary)]'><a href="#">Seasons and Events</a></li>
-                    <li className='border border-1 rounded-full px-5 py-3 text-center hover:bg-[var(--primary)] cursor-pointer'><a href="#">Discover Aseer Booklet</a></li>
+                    <li className=' hover:text-[var(--primary)]'><a href="#home">Discover Aseer</a></li>
+                    <li className='hover:text-[var(--primary)]'><a href="#home">Plan your trip</a></li>
+                    <li className='hover:text-[var(--primary)]'><a href="#home">Seasons and Events</a></li>
+                    <li className='border border-1 rounded-full px-5 py-3 text-center hover:bg-[var(--primary)] cursor-pointer'><a href="#home">Discover Aseer Booklet</a></li>
                 </ul>
             </div>
             <div className='flex gap-5 ml-auto lg:ml-0'>
-            <a href="" className='border border-2 rounded-full p-2'><IoIosMoon size={30}/></a>
-            <a href="" className='border border-2 rounded-full p-2'><CiLocationOn size={30}/></a>
-            <a href="" className='border border-2 rounded-full p-2'><CiGlobe size={30}/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><IoIosMoon size={30}/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><CiLocationOn size={30}/></a>
+            <a href="#home" className='border border-2 rounded-full p-2'><CiGlobe size={30}/></a>
             </div>
 
              {/* hamburger menu */}
@@ -46,10 +46,10 @@ const Hero = () => {
             <div className={`absolute lg:hidden z-30 bg-white bg-opacity-30 backdrop-blur-[100px] w-full left-0 text-[1.115rem] font-[600] transition-[height] duration-300 ease-in-out overflow-hidden ${isOpen ? 'h-[22rem]' : 'h-0'}`}>
 
                 <ul className='container-custom py-8'>
-                    <li className='mb-10 border-b-[1px] pb-5'><a href="#">Discover Aseer</a></li>
-                    <li className='mb-10 border-b-[1px] pb-5'><a href="#">Plan your trip</a></li>
-                    <li className='mb-10'><a href="#">Seasons and Events</a></li>
-                    <li className='mb-10'><a href="#" className=''>Discover Aseer Booklet</a></li>
+                    <li className='mb-10 border-b-[1px] pb-5'><a href="#home">Discover Aseer</a></li>
+                    <li className='mb-10 border-b-[1px] pb-5'><a href="#home">Plan your trip</a></li>
+                    <li className='mb-10'><a href="#home">Seasons and Events</a></li>
+                    <li className='mb-10'><a href="#home" className=''>Discover Aseer Booklet</a></li>
                 </ul>
             </div>
         </header>
@@ -66,10 +66,10 @@ const Hero = () => {
             </div>
             <div className='flex flex-col gap-4 ml-5 md:mr-[5rem]'>
                 <div className='border-l-[1px] h-[50px] translate-x-[50%] opacity-[0.6]'></div>
-                <a href=""><FaFacebookF size={30}/></a>
-                <a href=""><FaInstagram size={30}/></a>
-                <a href=""><FaXTwitter size={30}/></a>
-                <a href=""><FaSnapchatGhost size={30}/></a>
+                <a href="#home"><FaFacebookF size={30}/></a>
+                <a href="#home"><FaInstagram size={30}/></a>
+                <a href="#home"><FaXTwitter size={30}/></a>
+                <a href="#home"><FaSnapchatGhost size={30}/></a>
                 <div className='border-l-[1px] h-[50px] translate-x-[50%] opacity-[0.6]'></div>
             </div>
             </div>

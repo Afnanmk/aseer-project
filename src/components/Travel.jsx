@@ -11,7 +11,7 @@ const Travel = () => {
         
         <div className="w-full lg:w-[22%] pb-[3px] flex-col justify-center items-center">
             <div className="p-6 lg:p-[30px] w-full  lg:h-[250px] bg-white dark:bg-opacity-10 rounded-[14px] shadow justify-center items-center gap-2.5 lg:hover:mt-[-10px] lg:hover:mb-[10px] duration-500">
-                <a href="" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
+                <a href="#home" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
 
                     <img src="Assets/images/travel/visa.png" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
@@ -37,7 +37,7 @@ const Travel = () => {
         
         <div className="w-full lg:w-[22%]  lg:h-[310px] pb-[3px] flex-col justify-center items-center">
             <div className="p-6 lg:p-[30px] w-full  lg:h-[250px] bg-white dark:bg-opacity-10 rounded-[14px] shadow justify-center items-center gap-2.5 lg:hover:mt-[-10px] lg:hover:mb-[10px] duration-500">
-                <a href="" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
+                <a href="#home" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
 
                     <img src="Assets/images/travel/plane-svgrepo-com.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
@@ -63,7 +63,7 @@ const Travel = () => {
         
         <div className="w-full lg:w-[22%]  lg:h-[310px] pb-[3px] flex-col justify-center items-center">
             <div className="p-6 lg:p-[30px] w-full  lg:h-[250px] bg-white dark:bg-opacity-10 rounded-[14px] shadow justify-center items-center gap-2.5 lg:hover:mt-[-10px] lg:hover:mb-[10px] duration-500">
-                <a href="" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
+                <a href="#home" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
 
                     <img src="Assets/images/travel/hotel-building-svgrepo-com.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
@@ -89,7 +89,7 @@ const Travel = () => {
         
         <div className="w-full lg:w-[22%]  lg:h-[310px] pb-[3px] flex-col justify-center items-center">
             <div className="p-6 lg:p-[30px] w-full  lg:h-[250px] bg-white dark:bg-opacity-10 rounded-[14px] shadow justify-center items-center gap-2.5 lg:hover:mt-[-10px] lg:hover:mb-[10px] duration-500">
-                <a href="" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
+                <a href="#home" className="flex-col justify-start items-start gap-[30px] inline-flex w-full">
 
                     <img src="Assets/images/travel/binoculars-icon-1707979000.svg" alt="" className="h-[30px] lg:h-[41px] purple-700"/>
                     <div className="flex-col justify-start items-start gap-3 flex lg:h-[60px]">
