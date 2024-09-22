@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { CiSearch, CiLocationOn, CiGlobe } from "react-icons/ci";
+import { CiLocationOn, CiGlobe } from "react-icons/ci";
 import { IoIosMoon } from "react-icons/io";
 import { CgMenuRight } from "react-icons/cg";
 import { FaFacebookF, FaInstagram, FaSnapchatGhost } from "react-icons/fa";
