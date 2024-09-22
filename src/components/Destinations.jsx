@@ -38,7 +38,7 @@ const Destinations = () => {
           <h4 className='text-2xl lg:text-4xl mb-[3rem]'>{images[currentIndex].h4}</h4>
           <p className='text-xl leading-relaxed lg:w-[50%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus hic obcaecati enim, cum ut accusantium quaerat at quibusdam voluptas! Modi voluptatem explicabo exercitationem ratione at ab tempore, sapiente delectus error.</p>
           </div>
-          <div className="flex-wrap sm:flex-nowrap thumbnails gap-[10px] md:gap-[20px]">
+          <div className="thumbnails gap-[10px] md:gap-[20px]">
           {images.map((image, index) => (
             <img
               key={image.id}
@@ -50,6 +50,7 @@ const Destinations = () => {
           ))}
         </div>
           </div>
+          
           
          
       
