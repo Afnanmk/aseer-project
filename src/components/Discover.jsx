@@ -2,7 +2,7 @@ import React from 'react'
 
 const Discover = () => {
   return (
-    <section className='mt-[-35px] md:mt-[-90px] mb-[-90px] overflow-hidden'>
+    <section className='mt-[-35px] mb-[-35px] md:mt-[-70px] md:mb-[-70px] overflow-hidden'>
       <div className='container-custom bg-white rounded-xl py-11 px-6 md:px-11 relative z-10'>
          <div className='text-center'>
             <h2 className='font-[700] text-4xl pb-8'>Discover <span className='text-[var(--primary)]'>Aseer</span></h2>

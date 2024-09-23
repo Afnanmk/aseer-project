@@ -24,7 +24,7 @@ const Destinations = () => {
 
   return (
     <div
-      className="slider pb-[5rem] pt-[10rem] overflow-hidden"
+      className="slider pb-[5rem] pt-[8rem] overflow-hidden"
       style={{ backgroundImage: `url(${images[currentIndex].url})` }}
     >
 
@@ -50,12 +50,6 @@ const Destinations = () => {
           ))}
         </div>
           </div>
-          
-          
-         
-      
-        
-      
     </div>
   );
 }
