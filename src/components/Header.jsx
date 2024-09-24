@@ -11,11 +11,11 @@ const Header = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <header className='bg-black w-full lg:border-b-[2px] lg:border-[#5b635c] bg-opacity-[0.2]'>
+    <header className='text-white bg-black w-full lg:border-b-[2px] lg:border-[#5b635c] bg-opacity-[0.2] min-h-[100px]'>
     <div className='container-custom'>
     <nav className='flex lg:justify-between items-center py-6'>
         <div>
-            <Link href="/"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[140px]' id='home'/></Link>
+            <Link to="/"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[140px]' id='home'/></Link>
         </div>
         <div className='hidden lg:static lg:block text-lg font-[600] px-6'>
             <ul className='flex gap-6 items-center'>
