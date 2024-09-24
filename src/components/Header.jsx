@@ -43,7 +43,7 @@ const Header = () => {
         <div className={`absolute lg:hidden z-30 bg-white bg-opacity-30 backdrop-blur-[100px] w-full left-0 text-[1.115rem] font-[600] transition-[height] duration-300 ease-in-out overflow-hidden ${isOpen ? 'h-[22rem]' : 'h-0'}`}>
 
             <ul className='container-custom py-8'>
-                <li className='mb-10 border-b-[1px] pb-5'><a href="#home">Discover Aseer</a></li>
+                <li className='mb-10 border-b-[1px] pb-5'><Link to="/about">Discover Aseer</Link></li>
                 <li className='mb-10 border-b-[1px] pb-5'><a href="#home">Plan your trip</a></li>
                 <li className='mb-10'><a href="#home">Seasons and Events</a></li>
                 <li className='mb-10'><a href="#home" className=''>Discover Aseer Booklet</a></li>
