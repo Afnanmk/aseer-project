@@ -44,6 +44,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 /* AboutHero styles */
 .about_hero {
   background-image: url('/public/Assets/images/about/about_banner_dark.jpg');
@@ -71,6 +72,20 @@ code {
   border-top: 1px solid white; 
   opacity: 0.2;
 }
+
+/* MapList style */
+.two-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  text-overflow: ellipsis; /* Add ellipsis (...) */
+
+}
+
+
+
+/* MEDIA QUERY */
 @media (max-width: 1024px) {
   .footer_grid {
     grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns on tablet */
@@ -98,6 +113,8 @@ code {
     width: 100%;
   }
 }
+
+
 @media (max-width:768px) {
   .container-custom {
     width: 90%;

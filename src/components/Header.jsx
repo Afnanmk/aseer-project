@@ -15,7 +15,7 @@ const Header = () => {
     <div className='container-custom'>
     <nav className='flex lg:justify-between items-center py-6'>
         <div>
-            <Link to="/"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[140px]' id='home'/></Link>
+            <Link to="/"><img src="Assets/images/logos/aseer-logo.png" alt="" className='max-w-full h-auto w-[95px] lg:w-[130px]' id='home'/></Link>
         </div>
         <div className='hidden lg:static lg:block text-lg font-[600] px-6'>
             <ul className='flex gap-6 items-center'>
@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className='flex gap-5 ml-auto lg:ml-0'>
         <a href="#home" className='border-2 rounded-full p-2'><IoIosMoon className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
-        <a href="#home" className='border-2 rounded-full p-2'><CiLocationOn className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
+        <Link to="/map" className='border-2 rounded-full p-2'><CiLocationOn className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></Link>
         <a href="#home" className='border-2 rounded-full p-2'><CiGlobe className='w-[20px] h-[20px]   lg:w-[30px] lg:h-[30px]'/></a>
         </div>
 

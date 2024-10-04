@@ -5,7 +5,7 @@ import App from './App';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './routes/About';
-
+import Map from './routes/Map';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +13,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/map' element={<Map/>} />
     </Routes>
   </BrowserRouter>
 );
