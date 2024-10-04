@@ -135,7 +135,7 @@ const MapContainer = () => {
       <div className="h-full" ref={mapContainerRef}></div>
 
       {/* Map list starts */}
-      <div className="flex flex-col bg-white w-[30%] h-[75%] absolute top-[7%] left-[3%] rounded-lg p-4">
+      <div className="flex flex-col bg-white w-[93%] lg:w-[30%] h-[auto] lg:h-[75%] absolute top-[7%] left-[3%] rounded-lg p-4">
         <p className="flex flex-col font-[700] text-[1.7rem]">Discover Aseer</p>
         <p className="flex flex-col text-sm mt-[0.8rem] mb-[0.6rem]">
           Explore Aseer with our interactive tourist map and easily plan your
@@ -170,7 +170,7 @@ const MapContainer = () => {
           </form>
         </div>
 
-        <div className="list_bottom mt-[2.5rem] h-[100%] w-full overflow-y-auto">
+        <div className="list_bottom mt-[2.5rem] lg:h-[100%] lg:w-full overflow-y-auto hidden lg:block">
           <div className="w-full overflow-hidden">
             {/* List item starts */}
 
