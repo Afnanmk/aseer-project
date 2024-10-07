@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState, useCallback } from "react"
 // import MapList from './MapList'
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
+import { createRoot } from 'react-dom/client'
 
 import { FiArrowUpRight } from "react-icons/fi"
+import { GiFallingStar } from "react-icons/gi";
+
 
 const MapContainer = () => {
   const [type, setType] = useState("events")
@@ -70,6 +73,17 @@ const MapContainer = () => {
 
       data.forEach((event) => {
         if (event.latid && event.longit) {
+          // Create a DOM element for the marker
+          const markerDiv = document.createElement('div')
+          
+         const root = createRoot(markerDiv)
+         root.render(
+               <div className="text-[24px] text-[white] bg-[#7300CD] px-[5px] py-[6px] rounded-full">
+                <GiFallingStar/>
+               </div>,
+               markerDiv
+         )
+
           // Create a popup with dynamic content for each marker
           const popupContent = `
       <div class="popup-content font-display" style="width: 100%; border-radius: 5px;">
@@ -88,7 +102,7 @@ const MapContainer = () => {
           const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupContent) // Set the HTML content for the popup
 
           // Create and store each marker for each event
-          const marker = new mapboxgl.Marker()
+          const marker = new mapboxgl.Marker(markerDiv)
             .setLngLat([event.longit, event.latid])
             .setPopup(popup) // Set popup for marker
             .addTo(mapRef.current) // Add marker to the map
@@ -218,7 +232,7 @@ const MapContainer = () => {
               </div>
             ))}
 
-            {/* list item ends */}
+            {/* List item ends */}
           </div>
         </div>
       </div>
