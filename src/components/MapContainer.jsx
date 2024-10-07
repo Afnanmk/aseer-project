@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState, useCallback } from "react"
 // import MapList from './MapList'
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
@@ -35,8 +35,8 @@ const MapContainer = () => {
   }, [])
 
   // Fetch data from API when the map is ready
-  useEffect(() => {
-    const fetchData = async () => {
+ 
+    const fetchData = useCallback(async () => {
       try {
         const response = await fetch(
           "https://discoveraseer.com/api/collections/experience/entries?filter[published:is]=true&filter[locale:is]=english&filter[event_seasons:in]=summer-season|saudi-national-day94&filter[hide_from_interactive_map:is]=false&sort=start_date"
@@ -54,10 +54,14 @@ const MapContainer = () => {
       } catch (error) {
         console.log(error)
       }
-    }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
+
+
+  useEffect(() => {
     fetchData()
-  }, [])
+}, [fetchData])
 
   // Add markers to the map when `data` is updated
   useEffect(() => {
