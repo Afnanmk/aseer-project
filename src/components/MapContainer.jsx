@@ -9,8 +9,10 @@ import { GiFallingStar } from "react-icons/gi";
 
 
 const MapContainer = () => {
-  const [type, setType] = useState("events")
+  const [type, setType] = useState("Events")
   const [data, setData] = useState([])
+  const [destination, setDestination] = useState("all")
+  const [filteredData, setFilteredData] = useState([]) 
 
   // Refs for map instance and map container
   const mapRef = useRef()
@@ -53,10 +55,13 @@ const MapContainer = () => {
       const filteredData = result.data.filter(item => item.latid && item.longit);
 
         setData(filteredData)
-        console.log(data)
+        setFilteredData(filteredData)
+        
       } catch (error) {
         console.log(error)
       }
+
+    
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -66,12 +71,22 @@ const MapContainer = () => {
     fetchData()
 }, [fetchData])
 
+// Filter data by destination when the destination changes
+useEffect(() => {
+  if (destination === "all") {
+    setFilteredData(data) // Show all events if "all" is selected
+  } else {
+    setFilteredData(data.filter(item => item.city?.title?.toLowerCase() === destination.toLowerCase())) // Filter by destination
+  }
+}, [destination, data])
+
+
   // Add markers to the map when `data` is updated
   useEffect(() => {
-    if (mapRef.current && data.length > 0) {
+    if (mapRef.current && filteredData.length > 0) {
       markersRef.current.forEach((marker) => marker.remove()) // Rmeove existing markers
 
-      data.forEach((event) => {
+      filteredData.forEach((event) => {
         if (event.latid && event.longit) {
           // Create a DOM element for the marker
           const markerDiv = document.createElement('div')
@@ -80,8 +95,8 @@ const MapContainer = () => {
          root.render(
                <div className="text-[24px] text-[white] bg-[#7300CD] px-[5px] py-[6px] rounded-full">
                 <GiFallingStar/>
-               </div>,
-               markerDiv
+               </div>
+              
          )
 
           // Create a popup with dynamic content for each marker
@@ -98,7 +113,7 @@ const MapContainer = () => {
         )}</p>
       </div>
     `
-
+         
           const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupContent) // Set the HTML content for the popup
 
           // Create and store each marker for each event
@@ -110,10 +125,11 @@ const MapContainer = () => {
            
          
         }
+        
        
       })
     }
-  }, [data])
+  }, [filteredData])
 
   // Fly to the marker's location and open the popup when a list item is clicked
   const handleFlyTo = (longit, latid, index) => {
@@ -146,6 +162,12 @@ const MapContainer = () => {
     return html ? html.replace(/<[^>]*>/g, "") : "" // Removes all HTML tags
   }
 
+
+  const handleDestinationChange = (e) => {
+       setDestination(e.target.value)
+       
+  }
+
   //  Dom starts
   return (
     <div className="h-full w-full relative">
@@ -167,19 +189,20 @@ const MapContainer = () => {
               onChange={(e) => setType(e.target.value)}
               className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
-              <option value="all">Select Category</option>
-              <option value="events">Events</option>
-              <option value="restaurants">Restaurants</option>
-              <option value="hotels">Hotels</option>
-              <option value="attractions">Attractions</option>
+              <option value="all">All</option>
+              <option value="Events">Events</option>
+              <option value="Restaurants">Restaurants</option>
+              <option value="Accommodation">Accommodation</option>
+              {/* <option value="attractions">Attractions</option> */}
             </select>
           </form>
           <form className="w-[50%]">
             <select
               id="countries"
+              onChange={handleDestinationChange}
               className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
-              <option selected>Select destination</option>
+              <option value="all">Select destination</option>
               <option value="abha">Abha</option>
               <option value="al birk">Al Birk</option>
               <option value="bisha">Bisha</option>
@@ -192,7 +215,8 @@ const MapContainer = () => {
           <div className="w-full overflow-hidden">
             {/* List item starts */}
 
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
+             
               <div
                 key={item.id}
                 className={`itemm flex items-center gap-4 mb-6 pb-6 border-b-2 ${ item.longit && item.latid ? 'cursor-pointer' : 'opacity-50' }`}
@@ -230,6 +254,7 @@ const MapContainer = () => {
                   </div>
                 </div>
               </div>
+            
             ))}
 
             {/* List item ends */}
