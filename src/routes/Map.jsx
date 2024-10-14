@@ -1,12 +1,12 @@
 import React from 'react'
 import MapHeader from '../components/MapHeader'
-import MapContainer from '../components/MapContainer'
+import MapContainer2 from '../components/MapContainer2'
 
 const Map = () => {
   return (
     <section className='h-screen w-full overflow-hidden font-display'>
       <MapHeader/>
-      <MapContainer/>
+      <MapContainer2/>
     </section>
   )
 }

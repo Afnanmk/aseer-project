@@ -83,6 +83,12 @@ code {
 
 }
 
+.marker-icon {
+  font-size: "24px";
+  color: white;
+  padding: "6px";
+  border-radius: "50%"
+}
 
 
 /* MEDIA QUERY */
