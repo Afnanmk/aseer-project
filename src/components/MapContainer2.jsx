@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client"
 
 import { FiArrowUpRight } from "react-icons/fi"
 import { GiFallingStar } from "react-icons/gi"
-import { FaUtensils } from "react-icons/fa"
+import { LuUtensilsCrossed } from "react-icons/lu";
 import { FaBed } from "react-icons/fa"
 import { FaMapMarkerAlt } from "react-icons/fa"
 
@@ -16,6 +16,7 @@ const MapContainer2 = () => {
   const [destination, setDestination] = useState("all")
   const [filteredData, setFilteredData] = useState([])
   const [cities, setCities] = useState([])
+ 
 
   // Refs for map instance and map container
   const mapRef = useRef()
@@ -73,10 +74,12 @@ const MapContainer2 = () => {
         longit: Number(event?.longit),
         image: event.hero_image?.permalink || "",
         category: event?.type?.title || "",
+        cityTitle: event.city?.title || "",
       }))
 
       // Normalize places data
       const normalizedPlaces = placesData.data
+      .filter((place) => place?.type[0]?.title?.toLowerCase() !== "support services")
         .filter(
           (place) =>
             !["destinations", "attractions", "support services"].includes(
@@ -91,6 +94,7 @@ const MapContainer2 = () => {
           longit: Number(place?.longitude),
           image: place.image?.permalink || "",
           category: place?.type?.title || "",
+          cityTitle: place?.city?.length > 0 ? place?.city[0]?.title : ""
         }))
 
       // Combine the two datasets
@@ -140,21 +144,31 @@ const MapContainer2 = () => {
     if (destination !== "all") {
       updatedData = updatedData.filter(
         (item) =>
-          item.city && item.city?.toLowerCase() === destination.toLowerCase()
+          item.cityTitle && item.cityTitle.toLowerCase() === destination.toLowerCase()
       ) // Filter by destination
     }
 
     //   console.log("Filtered data: ", updatedData);
     setFilteredData(updatedData)
+
+    if (mapRef.current) {
+        mapRef.current.flyTo({
+          zoom: 7.14, // Default zoom level
+          essential: true, // This animation is considered essential with respect to performance
+        });
+      }
   }, [type, destination, data])
 
   // Add markers to the map when `data` is updated
   useEffect(() => {
     if (mapRef.current && filteredData.length > 0) {
       markersRef.current.forEach((marker) => marker.remove()) // Rmeove existing markers
+      
+      markersRef.current = []
 
-      filteredData.forEach((event) => {
+      filteredData.forEach((event, index) => {
         if (event.latid && event.longit) {
+
           // Create a DOM element for the marker
           const markerDiv = document.createElement("div")
 
@@ -166,7 +180,7 @@ const MapContainer2 = () => {
               case "events":
                 return <GiFallingStar className="bg-[#7300CD] text-[white] text-[35px] px-[5px] py-[6px] rounded-full"/>
               case "restaurants":
-                return <FaUtensils className="bg-[#22003D] text-[white] text-[35px] px-[5px] py-[6px] rounded-full"/>
+                return <LuUtensilsCrossed className="bg-[#22003D] text-[white] text-[35px] px-[5px] py-[6px] rounded-full"/>
               case "accommodation":
                 return <FaBed className="bg-[#b56feb] text-[white] text-[35px] px-[5px] py-[6px] rounded-full"/>
               default:
@@ -200,6 +214,8 @@ const MapContainer2 = () => {
             .setLngLat([event.longit, event.latid])
             .setPopup(popup) // Set popup for marker
             .addTo(mapRef.current) // Add marker to the map
+
+            // Log the marker index and whether the popup was attached
           markersRef.current.push(marker) // Store marker reference
         }
       })
@@ -208,7 +224,11 @@ const MapContainer2 = () => {
 
   // Fly to the marker's location and open the popup when a list item is clicked
   const handleFlyTo = (longit, latid, index) => {
+
     if (mapRef.current) {
+      
+        console.log(`FlyTo: Coordinates [${longit}, ${latid}] at index: ${index}`)
+
       mapRef.current.flyTo({
         center: [longit, latid],
         zoom: 16,
@@ -224,10 +244,18 @@ const MapContainer2 = () => {
 
       // Open the corresponding popup
       const marker = markersRef.current[index]
+
       if (marker) {
         const popup = marker.getPopup()
-        popup.addTo(mapRef.current) // Add popup to the map and show it
-        activePopupRef.current = popup // Track the open popup
+        if(popup) {
+            popup.addTo(mapRef.current) // Add popup to the map and show it
+            activePopupRef.current = popup // Track the open popup
+        } else {
+            console.log(`Popup not found for marker at index ${index}`)
+        }
+       
+      } else {
+        console.log(`Marker not found at index ${index}`)
       }
     }
   }
